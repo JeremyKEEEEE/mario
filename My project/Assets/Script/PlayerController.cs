@@ -1,4 +1,4 @@
-using System.Collections;
+  using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +8,12 @@ public class PlayerController : MonoBehaviour
 	public float jumpForce;
 	public bool canMove;
 	private Rigidbody2D theRB2D;
+	
+	public bool grounded;
+	public LayerMask whatIsGrd;
+	public Transform grdChecker;
+	public float grdCheckerRad;
+
 
 
     // Start is called before the first frame update
@@ -28,8 +34,10 @@ public class PlayerController : MonoBehaviour
     }
 	private void FixedUpdate()
 	{
+		grounded = Physics2D.OverlapCircle(grdChecker.position, grdCheckerRad, whatIsGrd);
 		MovePlayer();
-	
+		Jump();
+
 	}
 
 	void MovePlayer()
@@ -37,6 +45,17 @@ public class PlayerController : MonoBehaviour
 		if(canMove)
 		{
 			theRB2D.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * speed, theRB2D.velocity.y);
+		}
+	}
+	void Jump()
+	{
+		if(grounded == true)	 
+		{
+	
+			if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+			{
+				theRB2D.velocity = new Vector2(theRB2D.velocity.x, jumpForce);
+			}
 		}
 	}
 
