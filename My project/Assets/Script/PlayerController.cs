@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     }
 	private void FixedUpdate()
 	{
-		//grounded = Physics2D.OverlapCircle(grdChecker.position, grdCheckerRad, whatIsGrd);
+		grounded = Physics2D.OverlapCircle(grdChecker.position, grdCheckerRad, whatIsGrd);
 
 	}
 
@@ -50,14 +50,14 @@ public class PlayerController : MonoBehaviour
 	}
 	void Jump()
 	{
-		//if(grounded == true)	 
-		//{
+		if(grounded == true)	 
+		{
 	
 			if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
 			{
 				theRB2D.velocity = new Vector2(theRB2D.velocity.x, jumpForce);
 			}
-	//	}
+		}
 	}
 
 
