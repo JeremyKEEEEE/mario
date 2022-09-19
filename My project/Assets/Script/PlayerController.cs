@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 	
 	
 	}
-	
+	Debug.Log(theRB2D.position.y);
 
     }
 	private void FixedUpdate()
