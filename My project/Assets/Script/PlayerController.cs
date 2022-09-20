@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 	public float jumpForce;
 	public bool canMove;
 	private Rigidbody2D theRB2D;
+	public float superJumpForce;
 	
 	public bool grounded;
 	public LayerMask whatIsGrd;
@@ -37,13 +38,15 @@ public class PlayerController : MonoBehaviour
 	
 	}
 	Debug.Log(theRB2D.position.y);
-
+		MovePlayer();
+		Jump();
+		SuperJump();
     }
+
 	private void FixedUpdate()
 	{
 		grounded = Physics2D.OverlapCircle(grdChecker.position, grdCheckerRad, whatIsGrd);
-		MovePlayer();
-		Jump();
+		
 	}
 
 	void MovePlayer()
@@ -97,6 +100,53 @@ public class PlayerController : MonoBehaviour
 
 
 	}
+	void SuperJump()
+	{
+		if(grounded == true)	 
+		{
+	
+			if(Input.GetKeyDown(KeyCode.X))
+			{
+				theRB2D.velocity = new Vector3(theRB2D.velocity.x, superJumpForce);
+			}
+		}
+		
+		if(Input.GetKey(KeyCode.X))
+		{
+			if(airTimeCounter > 0)
+			{
+				theRB2D.velocity = new Vector3(theRB2D.velocity.x, superJumpForce);
+				airTimeCounter -= Time.deltaTime;	
+			}
+		
+		}
+
+		
+
+		if(Input.GetKeyUp(KeyCode.X))
+		{
+		
+			airTimeCounter = 0;
+		}
+
+		if(grounded)
+		{
+			airTimeCounter = airTime;
+		}
+
+
+
+
+
+
+
+
+
+
+	}
+	
+
+
 
 
 }
