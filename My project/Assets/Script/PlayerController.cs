@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
 	public bool canMove;
 	private Rigidbody2D theRB2D;
 	public float superJumpForce;
-	
+	public float teleport;	
+
 	public bool grounded;
 	public LayerMask whatIsGrd;
 	public Transform grdChecker;
@@ -134,18 +135,19 @@ public class PlayerController : MonoBehaviour
 			airTimeCounter = airTime;
 		}
 
-
-
-
-
-
-
-
-
-
 	}
-	
 
+	void Teleport()
+	{
+	
+		if(Input.GetKeyUp(KeyCode.G))
+		{
+		
+
+		
+		}
+	
+	}
 
 
 
