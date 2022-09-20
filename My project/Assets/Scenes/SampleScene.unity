@@ -6319,6 +6319,7 @@ MonoBehaviour:
   speed: 5
   jumpForce: 5
   canMove: 0
+  superJumpForce: 50
   grounded: 0
   whatIsGrd:
     serializedVersion: 2

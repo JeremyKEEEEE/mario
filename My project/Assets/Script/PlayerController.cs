@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
 	}
 	void Jump()
 	{
-		if(grounded == true)	 
+		if(theRB2D.position.y < -3.4)	 
 		{
 	
 			if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
 			airTimeCounter = 0;
 		}
 
-		if(grounded)
+		if(theRB2D.position.y < -3.4)
 		{
 			airTimeCounter = airTime;
 		}
