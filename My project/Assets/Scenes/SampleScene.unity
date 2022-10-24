@@ -2302,8 +2302,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -944628639613478452, guid: eb1be7c75d7a0a642a89aace18997f83, type: 3}
     - target: {fileID: 3870202057477697148, guid: 8372f6a9a33e9e54fa4c6ab1224fae50, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3870202057477697148, guid: 8372f6a9a33e9e54fa4c6ab1224fae50, type: 3}
       propertyPath: m_DefaultActionMap
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4855145722981232437, guid: 8372f6a9a33e9e54fa4c6ab1224fae50, type: 3}
+      propertyPath: movementFilter.layerMask.m_Bits
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7621443021216820362, guid: 8372f6a9a33e9e54fa4c6ab1224fae50, type: 3}
       propertyPath: m_RootOrder
@@ -2380,3 +2388,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4bb52a0afebf64d9efb5c666d96a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 1
+  collisionOffset: 0.05
+  movementFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
