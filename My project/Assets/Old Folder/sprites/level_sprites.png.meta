@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: b3d3ad0e7992fc04c9e12fc7337b8e97
+guid: c827fff6b4dc0d6449e81166d6c36a49
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -63,6 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -116,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stand
+      name: block
       rect:
         serializedVersion: 2
         x: 0
@@ -124,20 +125,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1196e5d4f0edb8140b393f39cb703d11
-      internalID: -683633042
+      spriteID: fcfbfa34d8febbd428647c22f240933f
+      internalID: -1690766325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump
+      name: spikes
       rect:
         serializedVersion: 2
         x: 64
@@ -145,20 +146,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9dc2cd04845746429df7927fdc1159b
-      internalID: -37001011
+      spriteID: 7c5a14aead61bfc4ea8f3123a12d9cc6
+      internalID: -1659657571
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk
+      name: flag
       rect:
         serializedVersion: 2
         x: 128
@@ -166,56 +167,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 138dfd2795560bd409cd360a88149b1e
-      internalID: -723460484
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: land
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7f1f05dfb56eaa4a9c50af9002829ab
-      internalID: 1384462359
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: run
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82b5f9509aa4ad14b937b0c8e89dbc9e
-      internalID: -976394448
+      spriteID: c5586b4dc3ed71244b07b7de9fcb23a3
+      internalID: 1907786093
       vertices: []
       indices: 
       edges: []
@@ -231,11 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      land: 1384462359
-      run: -976394448
-      stand: -683633042
-      Walk: -723460484
-      Jump: -37001011
+      spikes: -1659657571
+      flag: 1907786093
+      block: -1690766325
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
