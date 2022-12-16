@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.InputSystem;
+
+
 public class PlayerController : MonoBehaviour
 {
 	public float speed;
@@ -17,8 +20,8 @@ public class PlayerController : MonoBehaviour
 	public float airTime;
 	public float airTimeCounter;
 
-
-
+	private bool m_FacingRight = true;
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -30,13 +33,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
-	{
-		canMove = true;
+		if(Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
+		{
+			canMove = true;
+		
+		}
 	
-	
-	}
-	
+
 
     }
 	private void FixedUpdate()
@@ -44,6 +47,7 @@ public class PlayerController : MonoBehaviour
 		grounded = Physics2D.OverlapCircle(grdChecker.position, grdCheckerRad, whatIsGrd);
 		MovePlayer();
 		Jump();
+
 	}
 
 	void MovePlayer()
@@ -58,13 +62,13 @@ public class PlayerController : MonoBehaviour
 		if(grounded == true)	 
 		{
 	
-			if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+			if(Input.GetKeyDown(KeyCode.Space))
 			{
 				theRB2D.velocity = new Vector2(theRB2D.velocity.x, jumpForce);
 			}
 		}
 		
-		if(Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0))
+		if(Input.GetKey(KeyCode.Space))
 		{
 			if(airTimeCounter > 0)
 			{
@@ -89,14 +93,13 @@ public class PlayerController : MonoBehaviour
 
 
 
-
-
-
-
-
-
-
 	}
+	private void Flip()
+	{
+		m_FacingRight = !m_FacingRight;
+		transform.Rotate(0f, 180f, 0f);
+	}
+	
 
 
 }
